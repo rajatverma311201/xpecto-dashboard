@@ -2,14 +2,15 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import styles from "./UsersCountOnReferral.module.css";
 const UsersCountOnReferral = () => {
-    const [count, setCount] = useState(0);
     const [eventsData, setEventsData] = useState(null);
 
     useEffect(() => {
         (async () => {
             try {
                 const data = await axios.get(
-                    "/api/dashboard/users/referral"
+                    `${
+                        import.meta.env.VITE_BACKEND_URL
+                    }/api/dashboard/users/referral`
                 );
                 setEventsData((prev) => data.data.data.allUsers);
             } catch (error) {

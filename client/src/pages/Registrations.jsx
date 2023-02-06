@@ -7,9 +7,11 @@ const Registrations = () => {
     useEffect(() => {
         (async () => {
             try {
-                const data = await axios.get("/api/dashboard/users");
+                const data = await axios.get(
+                    `${import.meta.env.VITE_BACKEND_URL}/api/dashboard/users`
+                );
                 console.log(data.data);
-                setUsersData((prev) => data.data.data.allUsers);
+                setUsersData((prev) => data.data);
             } catch (error) {
                 console.log(error);
             }
@@ -20,7 +22,12 @@ const Registrations = () => {
         <div>
             {usersData ? (
                 <>
-                    <h1>Total registrations - {usersData.length}</h1>
+                    <h1>Total registrations - {usersData.data.allUsers.length}</h1>
+                    <h2>IIT Mandi - {usersData.fromMandi}</h2>
+                    <h2>
+                        Others -{" "}
+                        {usersData.results * 1 - usersData.fromMandi * 1}
+                    </h2>
                     <table className={styles.table}>
                         <thead>
                             <tr>
@@ -32,7 +39,7 @@ const Registrations = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {usersData.map((data) => {
+                            {usersData.data.allUsers.map((data) => {
                                 return (
                                     <tr key={data._id}>
                                         <td>{data.displayName}</td>
