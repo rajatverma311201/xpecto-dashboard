@@ -27,7 +27,10 @@ exports.getAllUsers = catchAsync(async (req, res, next) => {
     let fromMandi = 0;
 
     for (let i = 0; i < allUsers.length; i++) {
-        if (allUsers[i]?.collegeName?.toLowerCase()?.includes("mandi")) {
+        if (
+            allUsers[i]?.collegeName?.toLowerCase()?.includes("mandi") ||
+            allUsers[i]?.email?.toLowerCase()?.includes("mandi")
+        ) {
             fromMandi++;
         }
     }
