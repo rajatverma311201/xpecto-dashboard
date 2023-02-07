@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
+import UsersCount from "../components/UsersCount";
 import axios from "axios";
 import styles from "./UsersCountOnReferral.module.css";
+
 const UsersCountOnReferral = () => {
     const [eventsData, setEventsData] = useState(null);
 
@@ -21,6 +23,7 @@ const UsersCountOnReferral = () => {
 
     return (
         <div>
+            <UsersCount />
             {eventsData ? (
                 <table className={styles.table}>
                     <thead className={styles.thead}>
