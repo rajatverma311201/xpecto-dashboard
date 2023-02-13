@@ -8,6 +8,7 @@ import HomePage from "./pages/HomePage";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
 import axios from "axios";
+import EventTeams from "./pages/EventTeams";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
     {
         path: "/registrations",
         element: <Registrations />,
+    },
+    {
+        path: "/event-teams",
+        element: <EventTeams />,
     },
 ]);
 function App() {

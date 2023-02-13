@@ -43,17 +43,9 @@ const teamSchema = new mongoose.Schema({
 });
 
 teamSchema.pre(/^find/, function (next) {
-    this.populate({
-        path: "players",
-        select: "-__v",
-    });
-    this.populate({
-        path: "game",
-        select: "-__v",
-    });
-    this.populate({
-        path: "creater",
-    });
+    this.populate("players", "displayName email -_id");
+    this.populate("game", "name -_id");
+
     next();
 });
 

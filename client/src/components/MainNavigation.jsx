@@ -11,6 +11,10 @@ const MainNavigation = () => {
             name: "Registrations",
             link: "/registrations",
         },
+        {
+            name: "Event Teams",
+            link: "/event-teams",
+        },
     ];
     return (
         // <div className={styles["main-navigation-container"]}>
@@ -28,6 +32,7 @@ const MainNavigation = () => {
                 <Navbar.Link href="/">Home</Navbar.Link>
                 <Navbar.Link href="/registrations">Registrations</Navbar.Link>
                 <Navbar.Link href="/referral-data">Referral Data</Navbar.Link>
+                <Navbar.Link href="/event-teams">Event Teams</Navbar.Link>
                 {/* <Navbar.Link href="#">Pricing</Navbar.Link>
                     <Navbar.Link href="#">Company</Navbar.Link> */}
             </Navbar.Content>

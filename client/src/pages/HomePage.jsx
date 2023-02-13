@@ -20,6 +20,13 @@ const HomePage = () => {
                         </Button>
                     </Link>
                 </Grid>
+                <Grid>
+                    <Link href="/event-teams">
+                        <Button size="xl" shadow color="primary" auto>
+                            Event Teams
+                        </Button>
+                    </Link>
+                </Grid>
             </Grid.Container>
         </div>
     );
